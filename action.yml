@@ -20,6 +20,10 @@ inputs:
   dest:
     description: 'Remote server and path. i.e user@server.com:/var/www/server.com/'
     required: true
+  port:
+    description: 'Port for ssh connection'
+    required: true
+    default: '22'
 outputs:
   status:
     description: 'Status of the command'
@@ -31,3 +35,4 @@ runs:
     - ${{ inputs.options }}
     - ${{ inputs.src }}
     - ${{ inputs.dest }}
+    - ${{ inputs.port }}
